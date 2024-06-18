@@ -10,6 +10,6 @@ FROM ${NAMESPACE}/ue4-source:${TAG}-${PREREQS_TAG}
 # Build UBT and build the Engine
 # TODO: Fix UE4 compatibility
 # RUN ./Engine/Build/BatchFiles/Linux/Build.sh UE4Editor Linux Development -WaitMutex
-RUN ./Engine/Build/BatchFiles/Linux/Build.sh UnrealEditor Linux Development -WaitMutex
-RUN ./Engine/Build/BatchFiles/Linux/Build.sh ShaderCompileWorker Linux Development -WaitMutex
+RUN ./Engine/Build/BatchFiles/Linux/Build.sh UnrealEditor Linux Development -WaitMutex -buildubt
+RUN ./Engine/Build/BatchFiles/Linux/Build.sh ShaderCompileWorker Linux Development -WaitMutex -buildscw
 RUN ./Engine/Build/BatchFiles/Linux/Build.sh UnrealPak Linux Development -WaitMutex
